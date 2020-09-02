@@ -12,9 +12,13 @@ package TP2.ej7;
 public class Cajera implements Runnable {
 
     private String nombre;
+    private Cliente cliente;
+    private long initialTime;
 
-    public Cajera(String nombre) {
+    public Cajera(String nombre, Cliente cliente, long tiempo) {
         this.nombre = nombre;
+        this.cliente = cliente;
+        this.initialTime = tiempo;
     }
 
     public void procesarCompra(Cliente cliente, long timeStamp) {
