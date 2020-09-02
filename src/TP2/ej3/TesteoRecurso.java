@@ -7,7 +7,7 @@ package TP2.ej3;
 
 /**
  *
- * @author Sammy Guergachi <sguergachi at gmail.com>
+ * @author Fernando
  */
 public class TesteoRecurso {
 
@@ -16,10 +16,13 @@ public class TesteoRecurso {
         Cliente ines = new Cliente();
 
         juan.setName("Juan Lopez");
-        ines.setName("Inse Garcia");
+        ines.setName("Ines Garcia");
 
         Thread t1 = new Thread(juan);
         Thread t2 = new Thread(ines);
+
+        t1.setName("Juan Lopez");
+        t2.setName("Ines Garcia");
 
         t1.start();
         t2.start();
