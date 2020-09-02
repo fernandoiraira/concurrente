@@ -11,13 +11,19 @@ package TP2.ej3;
  */
 public class Cliente implements Runnable {
 
+    private String nombre;
+
     public void setName(String nombre) {
-        Thread.currentThread().setName(nombre);
+        this.nombre = nombre;
+    }
+
+    public String getName() {
+        return this.nombre;
     }
 
     @Override
     public void run() {
-        System.out.println("soy " + Thread.currentThread().getName());
+        System.out.println("soy  " + this.nombre);
         Recurso.uso();
         try {
             Thread.sleep(2000);
