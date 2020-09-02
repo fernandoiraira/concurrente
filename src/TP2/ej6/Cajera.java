@@ -31,7 +31,7 @@ public class Cajera {
     public void esperarXsegundos(int delay) {
 
         try {
-            this.wait(delay);
+            this.wait(delay*100);
 
         } catch (Exception e) {
 
