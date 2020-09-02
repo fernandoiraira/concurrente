@@ -12,6 +12,15 @@ package TP2.ej7;
 public class Main {
 
     public static void main(String[] args) {
+        Cliente c1 = new Cliente("Miguel", new int[]{2, 2, 1, 5, 2, 3});
+        Cliente c2 = new Cliente("Rosa", new int[]{1, 3, 5, 1, 1});
+
+        long initialTime = System.currentTimeMillis();
+        Cajera cajera1 = new Cajera("cajera 1", c1, initialTime);
+        Cajera cajera2 = new Cajera("cajera2", c2, initialTime);
+
+        Thread t1 = new Thread(cajera1);
+        Thread t2 = new Thread(cajera2);
 
     }
 
