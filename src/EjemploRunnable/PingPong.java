@@ -11,6 +11,7 @@ package EjemploRunnable;
  */
 public class PingPong implements Runnable {
 
+    //IMPORTANTE: toda clase que implemente Runnable tiene que tener definido su comportamiento en un metodo run
     private String cadena;
     private int delay;
 
