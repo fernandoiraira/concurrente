@@ -16,7 +16,7 @@ public class PruebaRunnable {
         PingPong o1 = new PingPong("PING", 33);
         PingPong o2 = new PingPong("PONG", 10);
 
-        //Se crean los hilos
+        //Se crean los hilos, con los objetos que se tienen que ejecutar concurrentemente
         Thread t1 = new Thread(o1);
         Thread t2 = new Thread(o2);
 
