@@ -15,6 +15,11 @@ class ThreadTesting {
         System.out.println(Thread.currentThread().getName());
         Thread miHilo = new MiEjecucion();
         miHilo.start();
+        try {
+            miHilo.join();
+        } catch (Exception e) {
+
+        }
         System.out.println("En el main");
     }
 }
