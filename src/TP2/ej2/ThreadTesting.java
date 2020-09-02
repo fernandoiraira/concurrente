@@ -12,6 +12,7 @@ package TP2.ej2;
 class ThreadTesting {
 
     public static void main(String[] args) {
+        System.out.println(Thread.currentThread().getName());
         Thread miHilo = new MiEjecucion();
         miHilo.start();
         System.out.println("En el main");
