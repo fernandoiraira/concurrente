@@ -11,9 +11,8 @@ package TP2.ej3;
  */
 public class Cliente implements Runnable {
 
-    
     public void setName(String nombre) {
-        Thread.currentThread().setName(nombre);       
+        Thread.currentThread().setName(nombre);
     }
 
     @Override
