@@ -22,6 +22,8 @@ public class Main {
         Thread t1 = new Thread(cajera1);
         Thread t2 = new Thread(cajera2);
 
+        t1.start();
+        t2.start();
     }
 
 }
