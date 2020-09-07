@@ -13,7 +13,7 @@ class Dato {
 
     private int valor;
 
-    void contar() {
+    public synchronized void contar() {
         valor = ++valor;
     }
 
