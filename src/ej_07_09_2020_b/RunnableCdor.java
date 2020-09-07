@@ -3,30 +3,28 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package ej_07_09_2020_b;
 
 /**
- * 
+ *
  * @author Sammy Guergachi <sguergachi at gmail.com>
  */
 class RunnableCdor implements Runnable {
 
-Dato unContador;  
+    Dato unContador;
 
-public RunnableCdor (Dato elCdor){
+    public RunnableCdor(Dato elCdor) {
 
-unContador = elCdor);
+        unContador = elCdor;
 
-}
+    }
 
+    public void run() {
 
-public void run() {
+        for (int x = 0; x < 10000; ++x) {
+            unContador.contar();
+        }
 
-for (int x=0; x<10000; ++x)
-
-unContador.incrementar();
-
-}
+    }
 
 }
