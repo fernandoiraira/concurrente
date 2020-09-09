@@ -39,7 +39,8 @@ public class VerificarCuenta implements Runnable {
                     System.out.println("La cuenta esta sobregirada.");
                 }
             } catch (InterruptedException e) {
-                Logger.getLogger(VerificarCuenta.class.getName()).log(Level.SEVERE, null, ex);
+               // Logger.getLogger(VerificarCuenta.class.getName()).log(Level.SEVERE, null, ex);
+                System.out.println("EXCEPCION DETECTADA");
             }
 
         }
