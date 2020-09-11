@@ -15,11 +15,17 @@ public class Vehiculo {
     private int modelo;
     private String marca;
     private int kmFaltantesParaElService;
+    private int capacidadLitros = 50;
+    private int litrosRestantes = 50;
 
     public Vehiculo(String patente, int modelo, String marca, int kmFaltantesParaElService) {
         this.patente = patente;
         this.modelo = modelo;
         this.marca = marca;
         this.kmFaltantesParaElService = kmFaltantesParaElService;
+    }
+    
+    public void llenar(){
+        this.litrosRestantes = this.capacidadLitros;
     }
 }
