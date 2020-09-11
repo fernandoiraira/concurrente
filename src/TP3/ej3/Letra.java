@@ -14,22 +14,25 @@ public class Letra implements Runnable {
     private String letra;
     private Coordinador coordinador;
 
-    public Letra(String letra, Coordinador coordinador) {
-        this.letra = letra;
+    public Letra(String cadena, Coordinador coordinador) {
+        this.letra = cadena;
         this.coordinador = coordinador;
     }
 
     public void run() {
-        while (!coordinador.esTurno(letra)) {
-            try {
-                Thread.sleep((int) (Math.random() * 1000));
-            } catch (Exception e) {
+        for (int i = 0; i < 10; i++) {
+            while (!coordinador.esTurno(letra)) {
+                try {
+                    Thread.sleep((int) (Math.random() * 1000));
+                } catch (Exception e) {
 
+                }
             }
-        }
 
-        System.out.println(letra);
-        coordinador.next();
+            System.out.println(letra);
+            coordinador.next();
+
+        }
 
     }
 
