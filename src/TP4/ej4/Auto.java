@@ -11,8 +11,8 @@ package TP4.ej4;
  */
 public class Auto extends Vehiculo {
 
-    public Auto(String patente, int modelo, String marca, int kmFaltantesParaElService) {
-        super(patente, modelo, marca, kmFaltantesParaElService);
+    public Auto(String patente, int modelo, String marca, Surtidor surtidor) {
+        super(patente, modelo, marca,surtidor);
     }
 
 }
