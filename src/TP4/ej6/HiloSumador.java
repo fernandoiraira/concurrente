@@ -14,6 +14,7 @@ public class HiloSumador implements Runnable {
     int[] array;
     int inicio;
     int fin;
+    int suma = 0;
 
     public HiloSumador(int[] array, int inicio, int fin) {
         this.array = array;
