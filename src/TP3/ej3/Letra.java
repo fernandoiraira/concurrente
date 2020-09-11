@@ -11,16 +11,12 @@ package TP3.ej3;
  */
 public class Letra implements Runnable {
 
-    private char letra;
+    private String letra;
     private Coordinador coordinador;
 
-    public Letra(char letra, Coordinador coordinador) {
+    public Letra(String letra, Coordinador coordinador) {
         this.letra = letra;
         this.coordinador = coordinador;
-    }
-
-    public Letra(char letra) {
-        this.letra = letra;
     }
 
     public void run() {
