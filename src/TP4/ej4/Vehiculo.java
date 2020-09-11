@@ -24,8 +24,8 @@ public class Vehiculo {
         this.marca = marca;
         this.kmFaltantesParaElService = kmFaltantesParaElService;
     }
-    
-    public void llenar(){
+
+    public void llenar() {
         this.litrosRestantes = this.capacidadLitros;
     }
 }
