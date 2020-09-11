@@ -12,7 +12,14 @@ package TP4.ej4;
 public class Main {
 
     public static void main(String[] args) {
-        
+        Surtidor ypf = new Surtidor();
+        for (int i = 0; i < 6; i++) {
+            Auto a = new Auto(Integer.toString(i), i, Integer.toString(i), ypf);//patente, int modelo, String marca, Surtidor surtidor
+            Thread aT = new Thread(a);
+            
+            aT.start();
+
+        }
 
     }
 
