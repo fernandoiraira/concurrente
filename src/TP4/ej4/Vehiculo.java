@@ -33,6 +33,7 @@ public class Vehiculo {
         this.litrosRestantes = this.litrosRestantes - kms;
 
         if (this.litrosRestantes < 3) {
+            System.out.println("El vehiculo " + this.patente + " necesita combustible.");
             surtidor.cargar(this);
         } else {
             System.out.println("No necesita nafta");
