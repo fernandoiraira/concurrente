@@ -12,17 +12,17 @@ package TP4.ej6;
 public class Main {
 
     public static void main(String[] args) {
-        
+
         int k = 2; //Numero de Hilos
-        int[] array = new int[50000];
+        int tope = 50002;
+        int[] array = new int[tope];
         Sync sync = new Sync(1);
 
-        for (int i = 0; i <= 49999; i++) {
+        for (int i = 0; i <= tope - 1; i++) {
             array[i] = 2;
         }
-        
 
-        HiloSumador h1 = new HiloSumador(array, 0, 49999, sync);
+        HiloSumador h1 = new HiloSumador(array, 0, tope-1, sync);
 
         Thread t1 = new Thread(h1);
 
