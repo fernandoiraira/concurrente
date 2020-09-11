@@ -18,9 +18,14 @@ public class Orco implements Runnable {
     }
 
     public void run() {
-        for (int i = 1; i <= 1000; i++) {
-            target.dañar(3);
-        }
+       
+            int vida = target.getVida();
+            target.setVida(vida - 3);
+        
+        
+//        for (int i = 1; i <= 1000; i++) {
+//            target.dañar(3);
+//        }
     }
 
 }
