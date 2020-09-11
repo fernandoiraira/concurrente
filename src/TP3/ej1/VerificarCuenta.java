@@ -22,7 +22,7 @@ public class VerificarCuenta implements Runnable {
             System.out.println(Thread.currentThread().getName() + ": Los fondos son de: " + cb.getBalance());
         } else {
             System.out.println("No hay suficiente dinero en la cuentapara realizar el retiro Sr." + Thread.currentThread().getName());
-            System.out.println("Su saldo actual es de" + cb.getBalance());
+            System.out.println("Su saldo actual es de " + cb.getBalance());
             Thread.sleep(1000);
         }
     }
