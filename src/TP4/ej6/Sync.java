@@ -11,7 +11,7 @@ package TP4.ej6;
  */
 public class Sync {
 
-    int sumaTotal=0;
+    int sumaTotal = 0;
     int contador = 0;
     int tope;
 
@@ -21,6 +21,10 @@ public class Sync {
 
     public boolean termino() {
         return this.contador == tope;
+    }
+
+    public synchronized void sumar(int suma) {
+        this.sumaTotal = suma;
     }
 
 }
