@@ -9,17 +9,17 @@ package TP3.ej2;
  *
  * @author Sammy Guergachi <sguergachi at gmail.com>
  */
-public class Orco implements Runnable {
+public class Curandero implements Runnable {
 
     private Jugador target;
 
-    public Orco(Jugador jugador) {
+    public Curandero(Jugador jugador) {
         target = jugador;
     }
 
     public void run() {
         for (int i = 1; i <= 1000; i++) {
-            target.dañar(3);
+            target.curar(3);
         }
     }
 
