@@ -29,7 +29,6 @@ public class VerificarCuenta implements Runnable {
 
     public void run() {
         for (int i = 0; i <= 3; i++) {
-
             try {
                 this.hacerRetiro(10);
                 if (cb.getBalance() < 0) {
