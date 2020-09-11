@@ -28,7 +28,6 @@ public class Letra implements Runnable {
             coordinador.next();
 
         }
-
     }
 
     public String getLetra() {
