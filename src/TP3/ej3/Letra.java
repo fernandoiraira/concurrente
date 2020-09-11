@@ -11,27 +11,27 @@ package TP3.ej3;
  */
 public class Letra implements Runnable {
 
-    private String letra;
+    private String cadena;
     private Coordinador coordinador;
 
     public Letra(String cadena, Coordinador coordinador) {
-        this.letra = cadena;
+        this.cadena = cadena;
         this.coordinador = coordinador;
     }
 
     public void run() {
         for (int i = 0; i < 10; i++) {
-            while (!coordinador.esTurno(letra)) {
+            while (!coordinador.esTurno(cadena)) {
             
             }
-            System.out.println(letra);
+            System.out.println(cadena);
             coordinador.next();
 
         }
     }
 
     public String getLetra() {
-        return this.letra;
+        return this.cadena;
     }
 
 }
