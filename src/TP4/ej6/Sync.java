@@ -27,4 +27,8 @@ public class Sync {
         this.sumaTotal = suma;
     }
 
+    public int getSuma() {
+        return this.sumaTotal;
+    }
+
 }
