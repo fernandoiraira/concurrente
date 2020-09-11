@@ -12,6 +12,13 @@ package TP4.ej6;
 public class Main {
 
     public static void main(String[] args) {
+        int[] array = new int[50000];
+
+        
+        for (int i = 0; i < 10; i++) {
+            HiloSumador h = new HiloSumador();
+
+        }
 
     }
 }
