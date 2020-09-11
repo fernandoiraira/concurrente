@@ -34,6 +34,8 @@ public class Vehiculo {
 
         if (this.litrosRestantes < 3) {
             surtidor.cargar(this);
+        } else {
+            System.out.println("No necesita nafta");
         }
     }
 
