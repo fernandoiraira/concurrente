@@ -12,13 +12,27 @@ package TP4.ej6;
 public class Main {
 
     public static void main(String[] args) {
-        int[] array = new int[50000];
-
         
-        for (int i = 0; i < 10; i++) {
-            HiloSumador h = new HiloSumador();
+        int k = 2;
+        int[] array = new int[50000];
+        Sync sync = new Sync(1);
+
+        for (int i = 0; i <= 49999; i++) {
+            array[i] = 2;
+        }
+        
+
+        HiloSumador h1 = new HiloSumador(array, 0, 49999, sync);
+
+        Thread t1 = new Thread(h1);
+
+        t1.start();
+
+        while (!sync.termino()) {
 
         }
+
+        System.out.println("Suma total: " + sync.getSuma());
 
     }
 }
