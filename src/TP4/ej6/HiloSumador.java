@@ -11,15 +11,17 @@ package TP4.ej6;
  */
 public class HiloSumador implements Runnable {
 
+    Sync sync;
     int[] array;
     int inicio;
     int fin;
     int suma = 0;
 
-    public HiloSumador(int[] array, int inicio, int fin) {
+    public HiloSumador(int[] array, int inicio, int fin, Sync sync) {
         this.array = array;
         this.inicio = inicio;
         this.fin = fin;
+        this.sync = sync;
     }
 
     public void run() {
