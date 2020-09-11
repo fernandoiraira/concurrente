@@ -13,7 +13,7 @@ public class Main {
 
     public static void main(String[] args) {
         
-        int k = 2;
+        int k = 2; //Numero de Hilos
         int[] array = new int[50000];
         Sync sync = new Sync(1);
 
