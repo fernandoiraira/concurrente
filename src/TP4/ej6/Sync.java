@@ -11,6 +11,7 @@ package TP4.ej6;
  */
 public class Sync {
 
+    int sumaTotal=0;
     int contador = 0;
     int tope;
 
