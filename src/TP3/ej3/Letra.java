@@ -21,8 +21,14 @@ public class Letra implements Runnable {
 
     public void run() {
         while (!coordinador.esTurno(letra)) {
-            System.out.println(letra);
-        }
-    }
+            try {
+                Thread.sleep(100);
+            } catch (Exception e) {
 
+            }
+        }
+
+        System.out.println(this.letra);
+        coordinador.siguiente();
+    }
 }
