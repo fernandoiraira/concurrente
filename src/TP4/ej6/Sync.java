@@ -25,6 +25,7 @@ public class Sync {
 
     public synchronized void sumar(int suma) {
         this.sumaTotal = suma;
+        this.contador++;
     }
 
     public int getSuma() {
