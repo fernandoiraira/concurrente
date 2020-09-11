@@ -9,10 +9,15 @@ package TP4.ej4;
  *
  * @author Sammy Guergachi <sguergachi at gmail.com>
  */
-public class Auto extends Vehiculo {
+public class Auto extends Vehiculo implements Runnable {
 
     public Auto(String patente, int modelo, String marca, Surtidor surtidor) {
-        super(patente, modelo, marca,surtidor);
+        super(patente, modelo, marca, surtidor);
     }
 
+    public void run() {
+        while (true) {
+            this.recorrerKm(20);
+        }
+    }
 }
