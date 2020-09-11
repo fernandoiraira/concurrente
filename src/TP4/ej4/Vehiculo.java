@@ -11,21 +11,33 @@ package TP4.ej4;
  */
 public class Vehiculo {
 
+    private Surtidor surtidor;
     private String patente;
     private int modelo;
     private String marca;
-    private int kmFaltantesParaElService;
     private int capacidadLitros = 50;
     private int litrosRestantes = 50;
 
-    public Vehiculo(String patente, int modelo, String marca, int kmFaltantesParaElService) {
+    public Vehiculo(String patente, int modelo, String marca, Surtidor surtidor) {
         this.patente = patente;
         this.modelo = modelo;
         this.marca = marca;
-        this.kmFaltantesParaElService = kmFaltantesParaElService;
+        this.surtidor = surtidor;
     }
 
     public void llenar() {
         this.litrosRestantes = this.capacidadLitros;
+    }
+
+    public void recorrerKm(int kms) {
+        this.litrosRestantes = this.litrosRestantes - kms;
+
+        if (this.litrosRestantes < 3) {
+            surtidor.cargar(this);
+        }
+    }
+
+    public String getMatricula() {
+        return this.patente;
     }
 }
