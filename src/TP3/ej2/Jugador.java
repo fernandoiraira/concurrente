@@ -25,7 +25,7 @@ public class Jugador {
         return this.vida;
     }
 
-    public void setVida(int vida) {
+    public synchronized void setVida(int vida) {
         this.vida = vida;
     }
 
