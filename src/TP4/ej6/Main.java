@@ -22,12 +22,6 @@ public class Main {
             array[i] = 2;
         }
 
-        HiloSumador h1 = new HiloSumador(array, 0, tope-1, sync);
-
-        Thread t1 = new Thread(h1);
-
-        t1.start();
-
         while (!sync.termino()) {
 
         }
