@@ -14,20 +14,12 @@ public class Coordinador {
     private String[] lista = {"A", "BB", "CCC"};
     private int turno = 0;
 
-    public synchronized  void esTurno(Letra objeto) {
+    public synchronized boolean esTurno(String caracter) {
+        return this.lista[turno].equals(caracter);
+    }
 
-        while (!this.lista[turno].equals(objeto.getLetra())) {
-            try {
-                Thread.sleep(1000);
-            } catch (Exception e) {
-
-            }
-        }
-        synchronized (this) {
-            System.out.println(objeto.getLetra());
-            this.turno = (this.turno + 1) % 3;
-        }
-
+    public void next() {
+        this.turno = (turno + 1) % 3;
     }
 
 }
