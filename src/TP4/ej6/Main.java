@@ -25,8 +25,8 @@ public class Main {
         }
 
         while ((tope - (c - 1) > k)) {
-            
-
+            hilo[c] = new HiloSumador(array, c, c + ((tope / k) - 1), sync); //int[] array, int inicio, int fin, Sync sync
+            c = c + ((tope / k) - 1);
         }
 
         while (!sync.termino()) {
