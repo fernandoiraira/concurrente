@@ -11,6 +11,16 @@ package TP4.ej6;
  */
 public class HiloSumador implements Runnable {
 
+    int[] array;
+    int inicio;
+    int fin;
+
+    public HiloSumador(int[] array, int inicio, int fin) {
+        this.array = array;
+        this.inicio = inicio;
+        this.fin = fin;
+    }
+
     public void run() {
 
     }
