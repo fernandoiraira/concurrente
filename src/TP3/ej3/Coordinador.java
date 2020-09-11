@@ -11,6 +11,15 @@ package TP3.ej3;
  */
 public class Coordinador {
 
-    private char[] lista = {'A', 'B', 'C'};
+    private String[] lista = {"A", "BB", "CCC"};
+    private int turno = 0;
+
+    public boolean esTurno(String caracter) {
+        return this.lista[turno].equals(caracter);
+    }
+
+    public void siguiente() {
+        this.turno = (turno + 1) % 3;
+    }
 
 }
