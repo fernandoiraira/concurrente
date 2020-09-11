@@ -14,8 +14,8 @@ public class Coordinador {
     private String[] lista = {"A", "BB", "CCC"};
     private int turno = 0;
 
-    public synchronized boolean esTurno(String caracter) {
-        return this.lista[turno].equals(caracter);
+    public synchronized boolean esTurno(String cadena) {
+        return this.lista[turno].equals(cadena);
     }
 
     public void next() {
