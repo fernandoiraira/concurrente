@@ -28,6 +28,10 @@ public class Sync {
     public synchronized void sumar(int suma) {
         this.sumaTotal = this.sumaTotal + suma;
         this.contador++;
+        
+        if (this.contador == cantHilos) {
+            this.mostrarTotal();
+        }
     }
 
     public int getSuma() {
