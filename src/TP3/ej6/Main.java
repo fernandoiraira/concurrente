@@ -13,28 +13,32 @@ public class Main {
 
     public static void main(String[] args) {
 
-        int k = 3; //Numero de Hilos
+        int k = 12; //Numero de Hilos
         int tope = 50000;
         int alcance = tope / k;
         int c = 0;
         Thread[] hilo = new Thread[k];
         int[] array = new int[tope];
-        Sync sync = new Sync(1);
+        Sync sync = new Sync(tope, k);
 
         for (int i = 0; i <= tope - 1; i++) {
-            array[i] = 2;
+            array[i] = 1;
         }
 
-        for (int i = 1; i <= k - 1; i++) {
+        for (int i = 0; i <= k - 2; i++) {
             HiloSumador h = new HiloSumador(array, c, c + alcance, sync); //int[] array, int inicio, int fin, Sync sync
+            System.out.println("Hilo " + i + ": desde: " + c + " hasta: " + (c + alcance));
             hilo[i] = new Thread(h);
-            c = c + alcance;
+            c = c + (alcance + 1);
         }
 
-        HiloSumador h = new HiloSumador(array, tope - c, tope - 1, sync); //int[] array, int inicio, int fin, Sync sync
+        HiloSumador h = new HiloSumador(array, c, tope - 1, sync); //int[] array, int inicio, int fin, Sync sync
+        System.out.println("Hilo " + (k - 1) + ": desde: " + (c) + " hasta: " + (tope - 1));
         hilo[k - 1] = new Thread(h);
 
-        for (int i = 0; i < k - 1; i++) {
+        System.out.println("Cantidad de hilos total: " + hilo.length);
+
+        for (int i = 0; i < k; i++) {
             hilo[i].start();
         }
 
