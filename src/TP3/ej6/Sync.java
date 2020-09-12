@@ -34,4 +34,8 @@ public class Sync {
         return this.sumaTotal;
     }
 
+    private void mostrarTotal() {
+        System.out.println("Suma total: " + this.sumaTotal);
+    }
+
 }
