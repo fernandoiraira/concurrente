@@ -14,17 +14,19 @@ public class Sync {
     int sumaTotal = 0;
     int contador = 0;
     int tope;
+    int cantHilos;
 
-    public Sync(int tope) {
+    public Sync(int tope, int cantHilos) {
         this.tope = tope;
+        this.cantHilos = cantHilos;
     }
 
     public boolean termino() {
-        return this.contador == tope;
+        return this.contador == cantHilos;
     }
 
     public synchronized void sumar(int suma) {
-        this.sumaTotal = suma;
+        this.sumaTotal = this.sumaTotal + suma;
         this.contador++;
     }
 
