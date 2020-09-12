@@ -13,7 +13,7 @@ public class Main {
 
     public static void main(String[] args) {
 
-        int k = 12; //Numero de Hilos
+        int k = 50; //Numero de Hilos
         int tope = 50000;
         int alcance = tope / k;
         int c = 0;
