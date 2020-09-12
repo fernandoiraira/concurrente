@@ -26,9 +26,9 @@ public class HiloSumador implements Runnable {
 
     public void run() {
         for (int i = inicio; i <= fin; i++) {
-            suma = suma + array[i];            
+            suma = suma + array[i];
         }
-        
+
         sync.sumar(suma);
     }
 
