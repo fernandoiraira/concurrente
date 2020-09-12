@@ -14,7 +14,8 @@ public class Main {
     public static void main(String[] args) {
 
         int k = 3; //Numero de Hilos
-        int tope = 7;
+        int tope = 50000;
+        int alcance = tope/k;
         int c = 0;
         HiloSumador[] hilo = new HiloSumador[k];
         int[] array = new int[tope];
@@ -22,11 +23,6 @@ public class Main {
 
         for (int i = 0; i <= tope - 1; i++) {
             array[i] = 2;
-        }
-
-        while ((tope - (c - 1) > k)) {
-            hilo[c] = new HiloSumador(array, c, c + ((tope / k) - 1), sync); //int[] array, int inicio, int fin, Sync sync
-            c = c + ((tope / k) - 1);
         }
 
         while (!sync.termino()) {
