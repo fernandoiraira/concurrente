@@ -21,7 +21,7 @@ public class Jugador {
         vida = vida + cant;
     }
 
-    public int getVida() {
+    public synchronized int getVida() {
         return this.vida;
     }
 
