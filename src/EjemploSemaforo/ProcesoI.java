@@ -20,6 +20,7 @@ public class ProcesoI implements Runnable {
     public void run() {
         for (int i = 1; i < 10000; i++) {
             unDato.incrementar();
+            System.out.println(unDato.getDato());
         }
     }
 
