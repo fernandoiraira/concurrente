@@ -7,7 +7,7 @@ package TP2.ej1;
 
 /**
  *
- * @author Sammy Guergachi <sguergachi at gmail.com>
+ * @author Fernando Iraira <fmiraira@gmail.com>
  */
 public class testeoRecurso {
 
