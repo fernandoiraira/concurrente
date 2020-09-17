@@ -9,7 +9,7 @@ import java.util.concurrent.Semaphore;
 
 /**
  *
- * @author Sammy Guergachi <sguergachi at gmail.com>
+ * @author Fernando Iraira <fmiraira@gmail.com>
  */
 public class Datos {
 
