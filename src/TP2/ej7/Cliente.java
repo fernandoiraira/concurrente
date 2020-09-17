@@ -7,7 +7,7 @@ package TP2.ej7;
 
 /**
  *
- * @author Sammy Guergachi <sguergachi at gmail.com>
+ * @author Fernando Iraira <fmiraira@gmail.com>
  */
 public class Cliente {
 
