@@ -7,7 +7,7 @@ package concurrente;
 
 /**
  *
- * @author Sammy Guergachi <sguergachi at gmail.com>
+ * @author Fernando Iraira <fmiraira@gmail.com>
  */
 public class Concurrente {
 
