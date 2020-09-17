@@ -7,7 +7,7 @@ package TP2.ej3;
 
 /**
  *
- * @author Fernando
+ * @author Fernando Iraira <fmiraira@gmail.com>
  */
 public class TesteoRecurso {
 
