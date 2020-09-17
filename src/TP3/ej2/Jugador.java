@@ -7,7 +7,7 @@ package TP3.ej2;
 
 /**
  *
- * @author Sammy Guergachi <sguergachi at gmail.com>
+ * @author Fernando Iraira <fmiraira@gmail.com>
  */
 public class Jugador {
 
