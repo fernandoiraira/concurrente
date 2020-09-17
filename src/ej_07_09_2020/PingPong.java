@@ -7,7 +7,7 @@ package ej_07_09_2020;
 
 /**
  *
- * @author Sammy Guergachi <sguergachi at gmail.com>
+ * @author Fernando Iraira <fmiraira@gmail.com>
  */
 public class PingPong extends Thread {
 
