@@ -7,7 +7,7 @@ package TP3.ej6;
 
 /**
  *
- * @author Sammy Guergachi <sguergachi at gmail.com>
+ * @author Fernando Iraira <fmiraira@gmail.com>
  */
 public class HiloSumador implements Runnable {
 
