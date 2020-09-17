@@ -7,7 +7,7 @@ package ej_07_09_2020_b;
 
 /**
  *
- * @author Sammy Guergachi <sguergachi at gmail.com>
+ * @author Fernando Iraira <fmiraira@gmail.com>
  */
 class Dato {
 
