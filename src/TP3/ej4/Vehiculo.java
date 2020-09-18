@@ -38,6 +38,12 @@ public class Vehiculo {
     }
 
     public void recorrerKm(int litros) {
+        //Se simula el tiempo que dura el recorrido del auto
+        try {
+            Thread.sleep(1500);
+        } catch (InterruptedException e) {
+
+        }
         this.litrosRestantes = this.litrosRestantes - litros;
 
         if (this.litrosRestantes < 3) {
