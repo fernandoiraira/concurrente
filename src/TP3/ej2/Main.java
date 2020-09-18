@@ -22,15 +22,6 @@ public class Main {
         o1.start();
         c1.start();
 
-        try { //Espero a que termine la ejecucion de los hilos, porque sino cuando muestro la vida por pantalla, me la muestra con error
-            o1.join();
-            c1.join();
-        } catch (Exception e) {
-
-        }
-
-        System.out.println("Vida de Jugador: " + player.getVida());
-
     }
 
 }
