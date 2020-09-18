@@ -16,7 +16,7 @@ public class Vehiculo {
     private int modelo;
     private String marca;
     private int capacidadLitros = 50;
-    private int litrosRestantes = 50;
+    protected int litrosRestantes = 50;
 
     public Vehiculo(String patente, int modelo, String marca, Surtidor surtidor) {
         this.patente = patente;
@@ -40,14 +40,15 @@ public class Vehiculo {
     public void recorrerKm(int litros) {
         //Se simula el tiempo que dura el recorrido del auto
         try {
+            System.out.println("El vehiculo " + Thread.currentThread().getName() + " se esta moviendo...");
             Thread.sleep(1500);
         } catch (InterruptedException e) {
 
         }
         this.litrosRestantes = this.litrosRestantes - litros;
 
-        if (this.litrosRestantes < 3) {
-            System.out.println("El vehiculo " + this.patente + " necesita combustible.");
+        if (this.litrosRestantes < 0) {
+            System.out.println("El vehiculo " + Thread.currentThread().getName() + " necesita combustible.");
             surtidor.cargar(this);
         }
     }
