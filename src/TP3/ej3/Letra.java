@@ -13,6 +13,7 @@ public class Letra implements Runnable {
 
     private String cadena;
     private Coordinador coordinador;
+    //Se podria utilizar un int privado que me indique cuantas veces se quiere imprimir la letra correspondiente
 
     public Letra(String cadena, Coordinador coordinador) {
         this.cadena = cadena;
@@ -21,9 +22,9 @@ public class Letra implements Runnable {
 
     public void run() {
         //Este for es opcional, es por si se quiere mostrar la secuencia de letras más de una vez
-        for (int i = 0; i < 10; i++) { 
+        for (int i = 0; i < 10; i++) {
             while (!coordinador.esTurno(cadena)) {
-            //Acá podría ir un sleep();
+                //Acá podría ir un sleep();
             }
             //Se muestra la letra correspondiente al turno
             System.out.println(cadena);
