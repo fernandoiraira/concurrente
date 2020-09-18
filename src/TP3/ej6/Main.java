@@ -42,11 +42,5 @@ public class Main {
             hilo[i].start();
         }
 
-        while (!sync.termino()) {
-
-        }
-
-        System.out.println("Suma total: " + sync.getSuma());
-
     }
 }
