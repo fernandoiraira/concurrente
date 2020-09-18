@@ -18,20 +18,30 @@ public class Surtidor {
     }
 
     public synchronized void cargar(Vehiculo auto) {
+        //Se cargarán al auto la cantidad de litros que falten para llenar el tanque
         int aCargar = auto.getCapMax() - auto.getLitros();
-
+        
+        //Se verifica que la cantidad de litros disponibles en el surtidor alcancen para el auto
         if (aCargar <= this.litrosRestantes) {
-            System.out.println("Se esta cargando el auto: " + auto.getMatricula());
+            System.out.println("Se esta cargando el auto: " + Thread.currentThread.getName());
+        
+            //Al surtidor se le resta la cantidad de litros que se "lleva" el auto
             this.litrosRestantes -= aCargar;
+            
+            //Se llena el tanque
             auto.llenar();
+            
+            //Simula el tiempo de carga...
             try {
                 Thread.sleep(700);
             } catch (Exception e) {
 
             }
-            System.out.println("Se cargo el auto: " + auto.getMatricula());
-        } else {
-            System.out.println("El surtidor esta agotado.");
+            System.out.println("Se cargo el auto: " + Thread.currentThread.getName());
+        } 
+        //En caso de que los litros no alcancen...
+        else {
+            System.out.println("El surtidor no dispone de esa cantidad de litros.");
         }
     }
 
