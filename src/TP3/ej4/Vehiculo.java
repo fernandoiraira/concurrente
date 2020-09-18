@@ -25,18 +25,24 @@ public class Vehiculo {
         this.surtidor = surtidor;
     }
 
+    public int getCapMax() {
+        return this.capacidadLitros;
+    }
+
+    public int getLitros() {
+        return this.litrosRestantes;
+    }
+
     public void llenar() {
         this.litrosRestantes = this.capacidadLitros;
     }
 
-    public void recorrerKm(int kms) {
-        this.litrosRestantes = this.litrosRestantes - kms;
+    public void recorrerKm(int litros) {
+        this.litrosRestantes = this.litrosRestantes - litros;
 
         if (this.litrosRestantes < 3) {
             System.out.println("El vehiculo " + this.patente + " necesita combustible.");
             surtidor.cargar(this);
-        } else {
-            System.out.println("No necesita nafta");
         }
     }
 
