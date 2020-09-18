@@ -20,18 +20,16 @@ public class Letra implements Runnable {
     }
 
     public void run() {
-        for (int i = 0; i < 10; i++) {
+        //Este for es opcional, es por si se quiere mostrar la secuencia de letras más de una vez
+        for (int i = 0; i < 10; i++) { 
             while (!coordinador.esTurno(cadena)) {
-            
+            //Acá podría ir un sleep();
             }
+            //Se muestra la letra correspondiente al turno
             System.out.println(cadena);
+            //Se pasa al siguiente turno
             coordinador.next();
-
         }
-    }
-
-    public String getLetra() {
-        return this.cadena;
     }
 
 }
