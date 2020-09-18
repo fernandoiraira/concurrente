@@ -13,13 +13,13 @@ public class Jugador {
 
     int vida = 10;
 
-    public synchronized void dañar(int cant) {
-        vida = vida - cant;
-    }
-
-    public synchronized void curar(int cant) {
-        vida = vida + cant;
-    }
+//    public synchronized void dañar(int cant) {
+//        vida = vida - cant;
+//    }
+//
+//    public synchronized void curar(int cant) {
+//        vida = vida + cant;
+//    }
 
     public synchronized int getVida() {
         return this.vida;
