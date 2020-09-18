@@ -19,11 +19,11 @@ public class Curandero implements Runnable {
 
     public void run() {
 
-        target.setVida(target.getVida() + 3);
+//        target.setVida(target.getVida() + 3);
 
-//        for (int i = 1; i <= 1000; i++) {
-//            target.curar(3);
-//        }
+
+            target.recibeCuracion(3);
+
     }
 
 }
