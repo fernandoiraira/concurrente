@@ -16,7 +16,9 @@ public class Auto extends Vehiculo implements Runnable {
     }
 
     public void run() {
+        //Simula el recorrido de los autos en bucle en bucle
         while (true) {
+            //Se recorre una cantidad de kms aleatoria
             this.recorrerKm((int) (Math.random() * 20));
         }
     }
