@@ -17,7 +17,7 @@ public class Auto extends Vehiculo implements Runnable {
 
     public void run() {
         while (true) {
-            this.recorrerKm(20);
+            this.recorrerKm((int) (Math.random() * 20));
         }
     }
 }
