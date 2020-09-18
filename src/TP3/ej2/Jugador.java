@@ -26,7 +26,9 @@ public class Jugador {
     }
 
     public synchronized void setVida(int vida) {
+        System.out.println(Thread.currentThread().getName() + " Modificando vida...");
         this.vida = vida;
+        System.out.println("La nueva vida del jugador es: " + vida);
     }
 
 }
