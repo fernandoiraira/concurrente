@@ -16,10 +16,17 @@ public class Auto extends Vehiculo implements Runnable {
     }
 
     public void run() {
+        boolean seguir = true;
         //Simula el recorrido de los autos en bucle en bucle
-        while (true) {
-            //Se recorre una cantidad de kms aleatoria
-            this.recorrerKm((int) (Math.random() * 20));
+        while (seguir) {
+            //Se recorre una cantidad de kms aleatoria, antes se verifica que el auto tenga nafta
+            if (this.litrosRestantes > 0) {
+                this.recorrerKm((int) (Math.random() * 20));
+            } else {
+                System.out.println(Thread.currentThread().getName() + " se detuvo, no tiene nafta en su tanque y no hay disponible en el surtidor.");
+                seguir = false;
+            }
+
         }
     }
 }
