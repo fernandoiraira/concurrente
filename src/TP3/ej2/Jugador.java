@@ -13,23 +13,23 @@ public class Jugador {
 
     int vida = 10;
 
-    public synchronized void recibeDaño(int cant) {
-        vida = vida - cant;
-        System.out.println("Vida actual: " + this.vida);
-    }
-
-    public synchronized void recibeCuracion(int cant) {
-        vida = vida + cant;
-        System.out.println("Vida actual: " + this.vida);
-    }
-
-//    public synchronized int getVida() {
-//        return this.vida;
+//    public synchronized void recibeDaño(int cant) {
+//        vida = vida - cant;
+//        System.out.println("Vida actual: " + this.vida);
 //    }
 //
-//    public synchronized void setVida(int vida) {
-//        System.out.println(Thread.currentThread().getName() + " Modificando vida...");
-//        this.vida = vida;
-//        System.out.println("La nueva vida del jugador es: " + vida);
+//    public synchronized void recibeCuracion(int cant) {
+//        vida = vida + cant;
+//        System.out.println("Vida actual: " + this.vida);
 //    }
+
+    public synchronized int getVida() {
+        return this.vida;
+    }
+
+    public synchronized void setVida(int vida) {
+        System.out.println(Thread.currentThread().getName() + " Modificando vida...");
+        this.vida = vida;
+        System.out.println("La nueva vida del jugador es: " + vida);
+    }
 }
