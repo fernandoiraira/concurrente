@@ -23,10 +23,10 @@ public class Auto extends Vehiculo implements Runnable {
             if (this.litrosRestantes > 0) {
                 this.recorrerKm((int) (Math.random() * 20));
             } else {
+                //En caso de que no se tenga nafta y ya no se haya podido cargar se mostrará este cartel y se terminará el bucle.
                 System.out.println(Thread.currentThread().getName() + " se detuvo, no tiene nafta en su tanque y no hay disponible en el surtidor.");
                 seguir = false;
             }
-
         }
     }
 }
