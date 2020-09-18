@@ -12,7 +12,7 @@ package TP3.ej4;
 public class Main {
 
     public static void main(String[] args) {
-        Surtidor ypf = new Surtidor();
+        Surtidor ypf = new Surtidor(1000);
 
         for (int i = 0; i < 6; i++) {
             Auto a = new Auto(Integer.toString(i), i, Integer.toString(i), ypf); //String patente, int modelo, String marca, Surtidor surtidor
