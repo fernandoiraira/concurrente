@@ -16,8 +16,8 @@ public class Main {
 
         for (int i = 0; i < 6; i++) {
             Auto a = new Auto(Integer.toString(i), i, Integer.toString(i), ypf); //String patente, int modelo, String marca, Surtidor surtidor
-            Thread aT = new Thread(a);
-
+            //Se le da nombre a los hilos para saber quién interactua
+            Thread aT = new Thread(a, "Auto " + i);
             aT.start();
         }
     }
