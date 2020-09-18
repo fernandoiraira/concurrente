@@ -18,12 +18,8 @@ public class Curandero implements Runnable {
     }
 
     public void run() {
-
-//        target.setVida(target.getVida() + 3);
-
-
-            target.recibeCuracion(3);
-
+        target.setVida(target.getVida() + 3);
+//            target.recibeCuracion(3);
     }
 
 }
