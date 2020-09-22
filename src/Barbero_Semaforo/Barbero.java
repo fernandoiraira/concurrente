@@ -5,12 +5,17 @@
  */
 package Barbero_Semaforo;
 
-
 /**
  *
  * @author Fernando Iraira <fmiraira@gmail.com>
  */
 public class Barbero implements Runnable {
+
+    Sillon sillon;
+
+    public Barbero(Sillon sillon) {
+        this.sillon = sillon;
+    }
 
     public void run() {
 
