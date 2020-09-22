@@ -23,6 +23,7 @@ public class Barbero implements Runnable {
         
         while(this.atendidos <= this.aAtender ){
             sillon.atender();
+            this.atendidos++;
         }
 
     }
