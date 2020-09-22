@@ -3,13 +3,15 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package Barbero_Semaforo;
 
+import java.util.concurrent.Semaphore;
+
 /**
- * 
+ *
  * @author Fernando Iraira <fmiraira@gmail.com>
  */
 public class Barbero {
+    Semaphore semBarbero = new Semaphore(0);
 
 }
