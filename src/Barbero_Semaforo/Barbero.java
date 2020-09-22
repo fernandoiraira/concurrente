@@ -13,8 +13,6 @@ import java.util.concurrent.Semaphore;
  */
 public class Barbero implements Runnable {
 
-    Semaphore semBarbero = new Semaphore(0);
-
     public void run() {
 
     }
