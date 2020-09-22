@@ -16,16 +16,27 @@ public class Sillon {
     private Semaphore semSillon = new Semaphore(1);
     private Semaphore semBarbero = new Semaphore(0);
     private Semaphore semSalida = new Semaphore(0);
-    
-    public void sentarse(){
-        try{
+
+    public void sentarse() {
+        try {
             semSillon.acquire();
             System.out.println(Thread.currentThread().getName() + " se sienta en el sillon.");
             semBarbero.release();
-            Thread.sleep(1000);
+            semSalida.acquire();
             System.out.println(Thread.currentThread().getName() + " se levanta del sillon.");
             semSillon.release();
-        }catch(Exception e){
-        }      
-    }   
+        } catch (Exception e) {
+        }
+    }
+
+    public void atender() {
+        System.out.println(" El barbero esta atendiendo a" + Thread.currentThread().getName());
+         try {
+            Thread.sleep(1000);
+        } catch (Exception e) {
+
+        }
+         System.out.println(" El barbero termino de atender a" + Thread.currentThread().getName());
+         semSalida.release();
+    }
 }
