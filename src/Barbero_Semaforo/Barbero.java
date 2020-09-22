@@ -11,7 +11,12 @@ import java.util.concurrent.Semaphore;
  *
  * @author Fernando Iraira <fmiraira@gmail.com>
  */
-public class Barbero {
+public class Barbero implements Runnable {
+
     Semaphore semBarbero = new Semaphore(0);
+
+    public void run() {
+
+    }
 
 }
