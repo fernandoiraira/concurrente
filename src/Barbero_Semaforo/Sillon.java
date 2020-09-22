@@ -17,6 +17,10 @@ public class Sillon {
     private Semaphore semBarbero = new Semaphore(0);
     private Semaphore semSalida = new Semaphore(0);
     
-    
-
+    public void sentarse(){
+        try{
+            semSillon.acquire();
+        }catch(Exception e){
+        }      
+    }   
 }
