@@ -21,7 +21,7 @@ public class Barbero implements Runnable {
 
     public void run() {
         
-        while(true){
+        while(this.atendidos <= this.aAtender ){
             sillon.atender();
         }
 
