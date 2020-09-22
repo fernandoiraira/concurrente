@@ -12,9 +12,11 @@ package Barbero_Semaforo;
 public class Barbero implements Runnable {
     private int atendidos = 0;
     private Sillon sillon;
+    private int aAtender;
 
-    public Barbero(Sillon sillon) {
+    public Barbero(Sillon sillon, int cant) {
         this.sillon = sillon;
+        this.aAtender = cant;
     }
 
     public void run() {
