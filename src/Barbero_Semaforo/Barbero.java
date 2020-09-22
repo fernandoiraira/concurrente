@@ -5,7 +5,6 @@
  */
 package Barbero_Semaforo;
 
-import java.util.concurrent.Semaphore;
 
 /**
  *
