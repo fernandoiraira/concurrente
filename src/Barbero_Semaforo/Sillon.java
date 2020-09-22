@@ -30,13 +30,16 @@ public class Sillon {
     }
 
     public void atender() {
-        System.out.println(" El barbero esta atendiendo a" + Thread.currentThread().getName());
-         try {
+        try {
+            semBarbero.acquire();
+            System.out.println(" El barbero esta atendiendo al cliente");
             Thread.sleep(1000);
         } catch (Exception e) {
 
         }
-         System.out.println(" El barbero termino de atender a" + Thread.currentThread().getName());
-         semSalida.release();
+        
+        semBarbero.release();
+        semSalida.release();
+        System.out.println(" El barbero dejo de atender al cliente");
     }
 }
