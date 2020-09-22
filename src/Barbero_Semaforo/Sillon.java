@@ -38,8 +38,9 @@ public class Sillon {
 
         }
         
-        semBarbero.release();
+        
         System.out.println(" El barbero dejo de atender al cliente");
         semSalida.release();
+        semBarbero.release();
     }
 }
