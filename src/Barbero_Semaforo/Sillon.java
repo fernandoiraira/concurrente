@@ -20,6 +20,10 @@ public class Sillon {
     public void sentarse(){
         try{
             semSillon.acquire();
+            System.out.println("Se sienta alguien...");
+            Thread.sleep(1000);
+            System.out.println("Se levanta alguien...");
+            semSillon.release();
         }catch(Exception e){
         }      
     }   
