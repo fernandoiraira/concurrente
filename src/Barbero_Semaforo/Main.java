@@ -12,12 +12,13 @@ package Barbero_Semaforo;
 public class Main {
 
     public static void main(String[] args) {
+        int cantClientes = 10;
         Sillon sillon = new Sillon();
         Barbero barbero = new Barbero(sillon);
         Thread b = new Thread(barbero);
         b.start();
-        
-        for (int i = 0; i < 10; i++) {
+
+        for (int i = 0; i < cantClientes; i++) {
             Cliente c1 = new Cliente(sillon);
             Thread t = new Thread(c1, "Cliente " + i);
             t.start();
