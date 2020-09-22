@@ -11,6 +11,13 @@ package Barbero_Semaforo;
  */
 public class Cliente implements Runnable {
 
+    Sillon sillon;
+
+    public Cliente(Sillon sillon) {
+        this.sillon = sillon;
+
+    }
+
     public void run() {
 
     }
