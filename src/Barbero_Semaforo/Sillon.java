@@ -20,9 +20,10 @@ public class Sillon {
     public void sentarse(){
         try{
             semSillon.acquire();
-            System.out.println("Se sienta alguien...");
+            System.out.println(Thread.currentThread().getName() + " se sienta en el sillon.");
+            semBarbero.release();
             Thread.sleep(1000);
-            System.out.println("Se levanta alguien...");
+            System.out.println(Thread.currentThread().getName() + " se levanta del sillon.");
             semSillon.release();
         }catch(Exception e){
         }      
