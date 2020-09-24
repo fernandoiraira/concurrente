@@ -18,6 +18,7 @@ public class Sillon {
     private Semaphore semSalida = new Semaphore(0);
 
     public void sentarse() {
+        System.out.println(Thread.currentThread().getName() + " intenta sentarse...");
         if (semSillon.tryAcquire()) {
             try {
                 System.out.println(Thread.currentThread().getName() + " se sienta en el sillon.");
