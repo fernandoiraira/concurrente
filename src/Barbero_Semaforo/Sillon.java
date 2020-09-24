@@ -16,6 +16,17 @@ public class Sillon {
     private Semaphore semSillon = new Semaphore(1);
     private Semaphore semBarbero = new Semaphore(0);
     private Semaphore semSalida = new Semaphore(0);
+    private int cantClientesTotal;
+    private int cantClientesActual = 0;
+    private Barbero barbero;
+
+    public Sillon(int cant) {
+        this.cantClientesTotal = cant;
+    }
+
+    public void setBarbero(Barbero barbero) {
+        this.barbero = barbero;
+    }
 
     public void sentarse() {
         System.out.println(Thread.currentThread().getName() + " intenta sentarse...");
@@ -28,8 +39,14 @@ public class Sillon {
                 semSillon.release();
             } catch (Exception e) {
             }
-        } else{
+        } else {
             System.out.println(Thread.currentThread().getName() + " no se pudo sentar y se fue.");
+        }
+
+        this.sumarCliente();
+
+        if (this.cantClientesActual == this.cantClientesTotal) {
+            barbero.terminar();
         }
 //        try {
 //            semSillon.acquire();
@@ -42,16 +59,21 @@ public class Sillon {
 //        }
     }
 
+    private synchronized void sumarCliente() {
+        this.cantClientesActual++;
+    }
+
     public void atender() {
-        try {
-            semBarbero.acquire();
-            System.out.println(" El barbero esta atendiendo al cliente");
-            Thread.sleep(1000);
-        } catch (Exception e) {
+        if (semBarbero.tryAcquire()) {
+            try {
+                System.out.println(" El barbero esta atendiendo al cliente");
+                Thread.sleep(1000);
+            } catch (Exception e) {
 
+            }
+
+            System.out.println(" El barbero dejo de atender al cliente");
+            semSalida.release();
         }
-
-        System.out.println(" El barbero dejo de atender al cliente");
-        semSalida.release();
     }
 }
