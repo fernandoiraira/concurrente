@@ -18,15 +18,27 @@ public class Sillon {
     private Semaphore semSalida = new Semaphore(0);
 
     public void sentarse() {
-        try {
-            semSillon.acquire();
-            System.out.println(Thread.currentThread().getName() + " se sienta en el sillon.");
-            semBarbero.release();
-            semSalida.acquire();
-            System.out.println(Thread.currentThread().getName() + " se levanta del sillon.");
-            semSillon.release();
-        } catch (Exception e) {
+        if (semSillon.tryAcquire()) {
+            try {
+                System.out.println(Thread.currentThread().getName() + " se sienta en el sillon.");
+                semBarbero.release();
+                semSalida.acquire();
+                System.out.println(Thread.currentThread().getName() + " se levanta del sillon.");
+                semSillon.release();
+            } catch (Exception e) {
+            }
+        } else{
+            System.out.println(Thread.currentThread().getName() + " no se pudo sentar y se fue.");
         }
+//        try {
+//            semSillon.acquire();
+//            System.out.println(Thread.currentThread().getName() + " se sienta en el sillon.");
+//            semBarbero.release();
+//            semSalida.acquire();
+//            System.out.println(Thread.currentThread().getName() + " se levanta del sillon.");
+//            semSillon.release();
+//        } catch (Exception e) {
+//        }
     }
 
     public void atender() {
@@ -37,8 +49,7 @@ public class Sillon {
         } catch (Exception e) {
 
         }
-        
-        
+
         System.out.println(" El barbero dejo de atender al cliente");
         semSalida.release();
     }
