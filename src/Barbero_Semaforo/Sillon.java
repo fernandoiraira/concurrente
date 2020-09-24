@@ -41,6 +41,5 @@ public class Sillon {
         
         System.out.println(" El barbero dejo de atender al cliente");
         semSalida.release();
-        semBarbero.release();
     }
 }
