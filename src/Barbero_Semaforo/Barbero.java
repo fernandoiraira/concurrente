@@ -10,22 +10,23 @@ package Barbero_Semaforo;
  * @author Fernando Iraira <fmiraira@gmail.com>
  */
 public class Barbero implements Runnable {
-    private int atendidos = 0;
-    private Sillon sillon;
-    private int aAtender;
 
-    public Barbero(Sillon sillon, int cant) {
+    private Sillon sillon;
+    boolean seguir = true;
+
+    public Barbero(Sillon sillon) {
         this.sillon = sillon;
-        this.aAtender = cant;
     }
 
     public void run() {
-        
-        while(true ){
-            sillon.atender();
-            this.atendidos++;
-        }
 
+        while (seguir) {
+            sillon.atender();
+        }
+    }
+    
+    public void terminar(){
+        this.seguir = false;
     }
 
 }
