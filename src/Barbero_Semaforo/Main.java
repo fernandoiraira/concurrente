@@ -12,7 +12,7 @@ package Barbero_Semaforo;
 public class Main {
 
     public static void main(String[] args) {
-        int cantClientes = 10;
+        int cantClientes = 5;
         Sillon sillon = new Sillon();
         Barbero barbero = new Barbero(sillon,cantClientes);
         Thread b = new Thread(barbero);
