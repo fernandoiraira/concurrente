@@ -13,8 +13,9 @@ public class Main {
 
     public static void main(String[] args) {
         int cantClientes = 5;
-        Sillon sillon = new Sillon();
-        Barbero barbero = new Barbero(sillon,cantClientes);
+        Sillon sillon = new Sillon(cantClientes);
+        Barbero barbero = new Barbero(sillon);
+        sillon.setBarbero(barbero);
         Thread b = new Thread(barbero);
         b.start();
 
@@ -23,7 +24,6 @@ public class Main {
             Thread t = new Thread(c1, "Cliente " + i);
             t.start();
         }
-
     }
 
 }
