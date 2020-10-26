@@ -13,18 +13,21 @@ public class main {
 
     public static void main(String[] args) {
 
-        Buffer buf = new Buffer("Buffesito", 10);
-        Productor p1 = new Productor("benecio", buf);
+        int cantElementos = 5;
 
-        Thread h1 = new Thread(p1, "productor");
+        Buffer buf = new Buffer("Buffesito", cantElementos);
+
+        for (int i = 1; i <= 2; i++) {
+            Productor p1 = new Productor("benecio", buf);
+            Thread h1 = new Thread(p1, "productor");
+            h1.start();
+        }
 
         for (int i = 1; i <= 10; i++) {
             Consumidor c1 = new Consumidor("juan", buf);
-            Thread h2 = new Thread(c1, "consumidor");
+            Thread h2 = new Thread(c1, "Consumidor " + i);
             h2.start();
         }
-
-        h1.start();
 
     }
 
