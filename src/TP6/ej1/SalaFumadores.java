@@ -67,7 +67,7 @@ public class SalaFumadores {
         this.colocarIngrediente.release();
     }
 
-    public synchronized void colocar(int opcion) {
+    public void colocar(int opcion) {
 
         try {
             this.colocarIngrediente.acquire();
