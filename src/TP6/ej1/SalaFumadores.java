@@ -25,34 +25,34 @@ public class SalaFumadores {
     public synchronized void entraFumar(int id) {
         switch (id) {
             case 1:
-                while (!puedeID1) {
-                    try {
+                try {
+                    while (!puedeID1) {
                         System.out.println("Falta tabaco y fosforos, no puedo fumar");
                         this.tabacoFosforos.wait();
-                    } catch (Exception e) {
                     }
+                } catch (Exception e) {
                 }
                 System.out.println("El fumador toma el tabaco y los fosforos...");
                 this.puedeID1 = false;
                 break;
             case 2:
-                while (!puedeID2) {
-                    try {
+                try {
+                    while (!puedeID2) {
                         System.out.println("Falta tabaco y papel, no puedo fumar");
                         this.tabacoPapel.wait();
-                    } catch (Exception e) {
                     }
+                } catch (Exception e) {
                 }
                 System.out.println("El fumador toma el tabaco y el papel...");
                 this.puedeID2 = false;
                 break;
             case 3:
-                while (!puedeID3) {
-                    try {
+                try {
+                    while (!puedeID3) {
                         System.out.println("Falta papel y fosforos, no puedo fumar");
                         this.papelFosforos.wait();
-                    } catch (Exception e) {
                     }
+                } catch (Exception e) {
                 }
                 System.out.println("El fumador toma el papel y los fosforos...");
                 this.puedeID3 = false;
