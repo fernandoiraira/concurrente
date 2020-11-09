@@ -22,13 +22,17 @@ public class SalaFumadores {
     private boolean puedeID2 = false;
     private boolean puedeID3 = false;
 
-    public synchronized void entraFumar(int id) {
+    public void entraFumar(int id) {
         switch (id) {
             case 1:
                 try {
                     while (!puedeID1) {
                         System.out.println("Falta tabaco y fosforos, no puedo fumar");
-                        this.tabacoFosforos.wait();
+
+                        synchronized (tabacoFosforos) {
+                            this.tabacoFosforos.wait();
+                        }
+
                     }
                 } catch (Exception e) {
                 }
@@ -39,7 +43,11 @@ public class SalaFumadores {
                 try {
                     while (!puedeID2) {
                         System.out.println("Falta tabaco y papel, no puedo fumar");
-                        this.tabacoPapel.wait();
+
+                        synchronized (tabacoPapel) {
+                            this.tabacoPapel.wait();
+                        }
+
                     }
                 } catch (Exception e) {
                 }
@@ -50,7 +58,11 @@ public class SalaFumadores {
                 try {
                     while (!puedeID3) {
                         System.out.println("Falta papel y fosforos, no puedo fumar");
-                        this.papelFosforos.wait();
+
+                        synchronized (papelFosforos) {
+                            this.papelFosforos.wait();
+                        }
+
                     }
                 } catch (Exception e) {
                 }
@@ -83,7 +95,10 @@ public class SalaFumadores {
                 } catch (Exception e) {
                 }
                 this.puedeID1 = true;
-                this.tabacoFosforos.notify();
+                synchronized (tabacoFosforos) {
+                    this.tabacoFosforos.notify();
+                }
+
                 break;
             case 2:
                 System.out.println("El agente esta colocando tabaco y papel...");
@@ -92,7 +107,10 @@ public class SalaFumadores {
                 } catch (Exception e) {
                 }
                 this.puedeID2 = true;
-                this.tabacoPapel.notify();
+                synchronized (tabacoPapel) {
+                    this.tabacoPapel.notify();
+                }
+
                 break;
             case 3:
                 System.out.println("El agente esta colocando papel y fosforos...");
@@ -101,7 +119,11 @@ public class SalaFumadores {
                 } catch (Exception e) {
                 }
                 this.puedeID3 = true;
-                this.papelFosforos.notify();
+
+                synchronized (papelFosforos) {
+                    this.papelFosforos.notify();
+                }
+
                 break;
             default:
                 throw new AssertionError();
