@@ -22,10 +22,10 @@ public class DisparaSala {
         Thread fumador2 = new Thread(f2);
         Thread fumador3 = new Thread(f3);
         Thread agente = new Thread(ag);
-
+        agente.start();
         fumador1.start();
         fumador2.start();
         fumador3.start();
-        agente.start();
+
     }//main
 }//clase
