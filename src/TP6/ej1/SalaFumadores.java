@@ -27,7 +27,7 @@ public class SalaFumadores {
             case 1:
                 try {
                     while (!puedeID1) {
-                        System.out.println("Falta tabaco y fosforos, no puedo fumar");
+                        //System.out.println("Falta tabaco y fosforos, no puedo fumar");
 
                         synchronized (tabacoFosforos) {
                             this.tabacoFosforos.wait();
@@ -36,13 +36,13 @@ public class SalaFumadores {
                     }
                 } catch (Exception e) {
                 }
-                System.out.println("El fumador toma el tabaco y los fosforos...");
+                //System.out.println("El fumador toma el tabaco y los fosforos...");
                 this.puedeID1 = false;
                 break;
             case 2:
                 try {
                     while (!puedeID2) {
-                        System.out.println("Falta tabaco y papel, no puedo fumar");
+                        //System.out.println("Falta tabaco y papel, no puedo fumar");
 
                         synchronized (tabacoPapel) {
                             this.tabacoPapel.wait();
@@ -51,13 +51,13 @@ public class SalaFumadores {
                     }
                 } catch (Exception e) {
                 }
-                System.out.println("El fumador toma el tabaco y el papel...");
+                //System.out.println("El fumador toma el tabaco y el papel...");
                 this.puedeID2 = false;
                 break;
             case 3:
                 try {
                     while (!puedeID3) {
-                        System.out.println("Falta papel y fosforos, no puedo fumar");
+                        //System.out.println("Falta papel y fosforos, no puedo fumar");
 
                         synchronized (papelFosforos) {
                             this.papelFosforos.wait();
@@ -66,7 +66,7 @@ public class SalaFumadores {
                     }
                 } catch (Exception e) {
                 }
-                System.out.println("El fumador toma el papel y los fosforos...");
+                //System.out.println("El fumador toma el papel y los fosforos...");
                 this.puedeID3 = false;
                 break;
             default:
