@@ -23,7 +23,7 @@ public class Agente implements Runnable {
 
     public void run() {
         while (true) {
-            sala.colocar(r.nextInt(3) + 1); //Random de 0 a 3
+            sala.colocar(r.nextInt(3) + 1); //Random de 1 a 3
         }//while
     }// run
 }//clase
