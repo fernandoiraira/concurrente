@@ -95,6 +95,7 @@ public class SalaFumadores {
                 } catch (Exception e) {
                 }
                 this.puedeID1 = true;
+                
                 synchronized (tabacoFosforos) {
                     this.tabacoFosforos.notify();
                 }
@@ -107,6 +108,7 @@ public class SalaFumadores {
                 } catch (Exception e) {
                 }
                 this.puedeID2 = true;
+                
                 synchronized (tabacoPapel) {
                     this.tabacoPapel.notify();
                 }
@@ -128,7 +130,6 @@ public class SalaFumadores {
             default:
                 throw new AssertionError();
         }
-
     }
 
 }
