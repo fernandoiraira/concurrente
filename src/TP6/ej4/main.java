@@ -19,8 +19,9 @@ public class main {
         int cantBandejas = 4;
         int cantAbridores = 1;
         int cantPostres = 1;
+        int capacidadMax = 5;
         //public Cuartel(int capMax, int cantBandejas, int cantAbridores, int cantPostres) {
-        Cuartel cuartel = new Cuartel(cantBandejas, cantAbridores, cantPostres);
+        Cuartel cuartel = new Cuartel(cantBandejas, cantAbridores, cantPostres, capacidadMax);
 
         for (int i = 1; i <= cantSoldados; i++) {
             int quierePostre = randomHasta(1);
