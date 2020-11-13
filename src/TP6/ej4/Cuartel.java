@@ -19,20 +19,23 @@ public class Cuartel {
     private Semaphore semAlmuerzo;
     private Semaphore semAbridores;
     private Semaphore semPostre;
+    private Semaphore semEntrada;
 
-    public Cuartel(int cantBandejas, int cantAbridores, int cantPostres) {
+    public Cuartel(int cantBandejas, int cantAbridores, int cantPostres, int capMax) {
         this.semAlmuerzo = new Semaphore(cantBandejas, true);
         this.semAbridores = new Semaphore(cantAbridores, true);
         this.semPostre = new Semaphore(cantPostres, true);
+        this.semEntrada = new Semaphore(capMax, true);
     }
 
     public void entrar() {
 
         try {
-            this.semAlmuerzo.acquire();
 
+            this.semEntrada.acquire();
             System.out.println(Thread.currentThread().getName() + " entro al cuartel...");
-
+            this.semAlmuerzo.acquire();
+            System.out.println(Thread.currentThread().getName() + " agarro una bandeja...");
         } catch (Exception e) {
         }
     }
@@ -74,6 +77,7 @@ public class Cuartel {
         try {
             System.out.println(Thread.currentThread().getName() + " termino de comer y se fue.");
             //this.semAlmuerzo.release();
+            this.semEntrada.release();
         } catch (Exception ex) {
 
         }
