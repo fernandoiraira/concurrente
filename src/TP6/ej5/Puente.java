@@ -10,7 +10,7 @@ package TP6.ej5;
  * @author Fernando Iraira <fmiraira@gmail.com>
  */
 public class Puente {
-    
+
     private int limite;
     private int turnoEntrada = 1;
     private int turnoSalida = 1;
@@ -56,7 +56,11 @@ public class Puente {
         if (vehiculo.getTurno() == this.limite - 1 || this.restantesNorteSur == 0) {
             this.turnoEntrada = 1;
             this.turnoSalida = 1;
-            this.esTurnoDelNorte = false;
+
+            if (this.restantesSurNorte > 0) {
+                this.esTurnoDelNorte = false;
+            }
+
             System.out.println("--------------------------------------------------------------------------------------------------------------");
         }
 
@@ -97,7 +101,11 @@ public class Puente {
         if (vehiculo.getTurno() == this.limite - 1 || this.restantesSurNorte == 0) {
             this.turnoEntrada = 1;
             this.turnoSalida = 1;
-            this.esTurnoDelNorte = true;
+
+            if (this.restantesNorteSur > 0) {
+                this.esTurnoDelNorte = true;
+            }
+
             System.out.println("--------------------------------------------------------------------------------------------------------------");
         }
 
