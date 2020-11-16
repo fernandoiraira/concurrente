@@ -13,6 +13,8 @@ public class main {
 
     public static void main(String[] args) {
 
+        //NO PUDE RESOLVER EL PROBLEMA CUANDO TENGO MUCHOS MENOS AUTOS EN UN LADO QUE EN OTRO
+        
         int limite = 3;
         int cantAutosNorteSur = 5;
         int cantAutosSurNorte = 6;
