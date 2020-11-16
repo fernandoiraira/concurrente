@@ -13,11 +13,11 @@ public class main {
 
     public static void main(String[] args) {
 
-        //NO PUDE RESOLVER EL PROBLEMA CUANDO TENGO MUCHOS MENOS AUTOS EN UN LADO QUE EN OTRO
+        //SE PUDO RESOLVER EL PROBLEMA CUANDO TENGO MUCHOS MENOS AUTOS EN UN LADO QUE EN OTRO
         
         int limite = 3;
         int cantAutosNorteSur = 5;
-        int cantAutosSurNorte = 6;
+        int cantAutosSurNorte = 20;
 
         Puente p = new Puente(limite, cantAutosNorteSur, cantAutosSurNorte);
 
