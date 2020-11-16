@@ -10,7 +10,7 @@ package TP6.ej5;
  * @author Fernando Iraira <fmiraira@gmail.com>
  */
 public class Puente {
-
+    
     private int limite;
     private int turnoEntrada = 1;
     private int turnoSalida = 1;
