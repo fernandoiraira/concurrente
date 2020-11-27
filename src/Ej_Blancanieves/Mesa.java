@@ -37,7 +37,7 @@ public class Mesa {
 
             System.out.println(Thread.currentThread().getName() + " se sentó en una silla..");
 
-            if (this.paseando && this.enanosSentados == 1) {
+            if (this.paseando) {
                 this.semTerminarPaseo.release();
             } else {
                 this.servirComida.release();
@@ -72,6 +72,7 @@ public class Mesa {
             System.out.println(Thread.currentThread().getName() + " está paseando..");
             this.paseando = true;
             this.semTerminarPaseo.acquire();
+            this.paseando = false;
         }
 
     }
