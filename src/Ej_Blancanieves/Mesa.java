@@ -70,7 +70,6 @@ public class Mesa {
             this.semTerminarPaseo.acquire();
             this.paseando = false;
         }
-
     }
 
     public void servirComida() {
