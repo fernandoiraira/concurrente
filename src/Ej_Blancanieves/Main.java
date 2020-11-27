@@ -17,7 +17,7 @@ public class Main {
     public static void main(String[] args) {
 
         int cantSillas = 4;
-        int cantEnanos = 1;
+        int cantEnanos = 2;
 
         Mesa unaMesa = new Mesa(cantSillas);
         Blancanieves b = new Blancanieves(unaMesa);

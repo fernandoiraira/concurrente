@@ -39,10 +39,9 @@ public class Mesa {
 
             if (this.paseando && this.enanosSentados == 1) {
                 this.semTerminarPaseo.release();
-
+            } else {
+                this.servirComida.release();
             }
-
-            this.servirComida.release();
 
             mutex.release();
 
