@@ -92,7 +92,7 @@ public class Observatorio {
     }
 
     public synchronized void entrarInvestigador() {
-        while (this.cantidadActualPersonas >= 3 || this.turno != 2) {
+        while (this.cantidadActualPersonas >= 1 || this.turno != 2) {
             try {
                 this.wait();
             } catch (Exception e) {
